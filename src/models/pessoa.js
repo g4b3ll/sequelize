@@ -22,8 +22,14 @@ module.exports = (sequelize, DataTypes) => {
 
     static associate(models) {
 
-      // define association here
+      Pessoa.hasMany(models.Curso, {
+        foreignKey: 'docente_id'
+      });
 
+      Pessoa.hasMany(models.Matricula, {
+        foreignKey: 'estudante_id',
+        
+      });
     }
 
   }
